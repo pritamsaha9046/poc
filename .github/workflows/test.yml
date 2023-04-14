@@ -34,6 +34,4 @@ jobs:
         with:
           branch: gh-pages
           folder: ${{ github.run_id }}
-          clean: true
-          clean-exclude: |
-            *.html
+          clean: false
