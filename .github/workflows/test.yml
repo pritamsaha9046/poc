@@ -26,12 +26,13 @@ jobs:
         run: npm install -g pagecrypt 
 
       - name: Install Package
-        run: pagecrypt Reports/index.html ${{ github.run_id }}/index.html password${{ github.run_id }} 
+        run: pagecrypt Reports/index.html Reports/index.html password${{ github.run_id }} 
           
       - name: Deploy Report
         if: always()
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: ${{ github.run_id }}
+          folder: Reports
+          target-folder: ${{ github.run_id }}
           clean: false
