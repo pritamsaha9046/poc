@@ -35,4 +35,7 @@ jobs:
           branch: gh-pages
           folder: Reports
           target-folder: ${{ github.run_id }}
-          clean: false
+          clean: true
+          clean-exclude: |
+            */*.html
+            *.html
