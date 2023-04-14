@@ -36,6 +36,5 @@ jobs:
           folder: Reports
           target-folder: ${{ github.run_id }}
           clean: true
-          clean-exclude: |
-            */*.html
-            *.html
+          # clean-exclude: |
+            # *.html
