@@ -44,4 +44,4 @@ jobs:
           branch: gh-pages
           folder: Reports/screenshots
           target-folder: screenshots
-          clean: false    
+          clean: true    
