@@ -3,7 +3,7 @@ name: Tests
 on:
   push:
     branches: ["main"]
-    
+
 permissions:
   actions: read
   contents: write
@@ -26,11 +26,12 @@ jobs:
         run: npm install -g pagecrypt 
 
       - name: Install Package
-        run: pagecrypt input.html Reports/index.html password 
+        run: pagecrypt input.html ${{ github.run_id }}/index.html password${{ github.run_id }} 
           
       - name: Deploy Extent Report
         if: always()
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: ./Reports
+          folder: ./
+          clean: false
