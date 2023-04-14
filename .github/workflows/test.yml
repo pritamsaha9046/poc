@@ -35,6 +35,13 @@ jobs:
           branch: gh-pages
           folder: Reports
           target-folder: ${{ github.run_id }}
-          clean: true
-          # clean-exclude: |
-            # *.html
+          clean: false
+
+      - name: Deploy SS
+        if: always()
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: Reports/screenshots
+          target-folder: screenshots
+          clean: false    
